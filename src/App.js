@@ -6,6 +6,8 @@ import Mainpage from "./components/Mainpage.js";
 import Postcard from "./components/Postcard.js";
 import Viewpostcard from "./components/Viewpostcard.js";
 import Signup from "./components/Signup.js";
+// import PrivateRoute from "../Utils/PrivateRoute";
+// import PublicOnlyRoute from "../Utils/PublicOnlyRoute";
 
 export default class App extends React.Component {
   state = {

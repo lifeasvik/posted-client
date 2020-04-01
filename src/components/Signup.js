@@ -1,18 +1,39 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../styles.css";
+// import AuthApiService from "../../services/auth-api-service";
 
 export default class Viewpostcard extends Component {
   state = {
     username: "",
     password: "",
-    verifypass: ""
+    verifypass: "",
+    error: null
   };
-  // static contextType = AppContext;
+  // // static contextType = AppContext;
+  // static defaultProps = {
+  //   onRegistrationSuccess: () => {}
+  // };
 
-  handleSubmit = e => {
-    e.preventDefault();
-  };
+  // //add info here from thingful
+  // handleSubmit = ev => {
+  //   ev.preventDefault();
+  //   const { user_name, password } = ev.target;
+
+  //   this.setState({ error: null });
+  //   AuthApiService.postUser({
+  //     user_name: user_name.value,
+  //     password: password.value
+  //   })
+  //     .then(user => {
+  //       user_name.value = "";
+  //       password.value = "";
+  //       this.props.onRegistrationSuccess();
+  //     })
+  //     .catch(res => {
+  //       this.setState({ error: res.error });
+  //     });
+  // };
 
   render() {
     return (

@@ -8,7 +8,50 @@ export default class App extends React.Component {
   state = {
     login: "",
     password: ""
+    // error: null
   };
+
+  // static defaultProps = {
+  //   onLoginSuccess: () => {}
+  // };
+
+  // handleSubmitJwtAuth = ev => {
+  //   ev.preventDefault();
+  //   this.setState({ error: null });
+  //   const { user_name, password } = ev.target;
+
+  //   AuthApiService.postLogin({
+  //     user_name: user_name.value,
+  //     password: password.value
+  //   })
+  //     .then(res => {
+  //       user_name.value = "";
+  //       password.value = "";
+  //       TokenService.saveAuthToken(res.authToken);
+  //       this.props.onLoginSuccess();
+  //     })
+  //     .catch(res => {
+  //       this.setState({
+  //         error: res.error
+  //       });
+  //     });
+  // };
+
+  // handleSubmitBasicAuth = ev => {
+  //   ev.preventDefault()
+  //   const { user_name, password } = ev.target
+
+  //   console.log('login form submitted')
+  //   console.log({ user_name, password })
+
+  //   TokenService.saveAuthToken(
+  //     TokenService.makeBasicAuthToken(user_name.value, password.value)
+  //   )
+
+  //   user_name.value = ''
+  //   password.value = ''
+  //   this.props.onLoginSuccess()
+  // }
 
   loginHandler = e => {
     this.setState({ login: e.target.value });
@@ -16,10 +59,6 @@ export default class App extends React.Component {
 
   passwordHandler = e => {
     this.setState({ password: e.target.value });
-  };
-
-  handleSubmit = e => {
-    e.preventDefault();
   };
 
   render() {
@@ -31,7 +70,7 @@ export default class App extends React.Component {
         {/* form starts here to login */}
         <div className="splashcontainer">
           <div className="contentliner">Sign in</div>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmitJwtAuth}>
             <div>
               <div className="contentliner">
                 <h4>Login:</h4>
